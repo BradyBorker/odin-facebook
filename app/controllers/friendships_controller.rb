@@ -12,6 +12,20 @@ class FriendshipsController < ApplicationController
         redirect_back(fallback_location: root_path)
     end
 
+    def update
+        @friendship = Friendship.find_by(user_id: params[:friend_id], friend_id: current_user.id)
+        
+        if @friendship
+            @friendship.pending = false
+            @friendship.save
+            flash[:notice] = 'Friend Invitation Accepted'
+        else
+            flash[:alert] = 'Failed to Accept Friend Invitation'
+        end
+
+        redirect_back(fallback_location: root_path)
+    end
+
     def destroy
     end
 end

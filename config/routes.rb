@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   # Temporary root path:
   root "users#show"
 
-  resources :friendships, only: [:create, :destroy]
+  resources :friendships, only: [:create, :update, :destroy]
 end
