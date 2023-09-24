@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   
   # Temporary root path:
-  root "friendships#index"
+  root 'friendships#index'
 
-  resources :friendships, only: [:index, :create, :update, :destroy]
+  resources :friendships, only: [:show, :create, :update, :destroy]
 end

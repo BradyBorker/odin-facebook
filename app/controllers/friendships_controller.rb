@@ -1,5 +1,8 @@
 class FriendshipsController < ApplicationController
-    def index
+    before_action :authenticate_user!
+    
+    def show
+        # Show active friendships and pending friendship invitations
     end
 
     def create

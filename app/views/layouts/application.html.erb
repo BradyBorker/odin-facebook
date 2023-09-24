@@ -8,9 +8,19 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= yield :stylesheets %>
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <div class="nav-bar">
+        <div class="friends-container">
+          <!-- SVG and number of notifications -->
+          <h2>Friendship Icon</h2>
+          <div class="friend_invitations_count"><%= current_user.friend_invitations_count %></div>
+        </div>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

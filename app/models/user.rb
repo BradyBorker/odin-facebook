@@ -9,4 +9,8 @@ class User < ApplicationRecord
 
   has_many :inverse_friendships, class_name: 'Friendship', foreign_key: :friend_id
   has_many :inverse_friends, through: :inverse_friendships, source: :user
+
+  def friend_invitations_count
+    inverse_friendships.where(pending: true).count.to_s
+  end
 end
