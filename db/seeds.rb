@@ -8,8 +8,17 @@
 
 User.delete_all
 
-emails = ['test1@gmail.com', 'test2@gmail.com', 'test3@gmail.com', 'test4@gmail.com']
-emails.each do |email|
-    user = User.new(email: email)
-    user.save
-end
+user = User.new
+user.email = 'test@example.com'
+user.password = 'testing'
+user.save!
+
+user = User.new
+user.email = 'test1@example.com'
+user.password = 'testing1'
+user.save!
+
+user = User.new
+user.email = 'test2@example.com'
+user.password = 'testing2'
+user.save!
