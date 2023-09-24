@@ -1,5 +1,6 @@
 class FriendshipsController < ApplicationController
-    before_create :inverse_friendship_exists
+    def index
+    end
 
     def create
         @friendship = current_user.friendships.build(friend_id: params[:friend_id], pending: true)
@@ -30,13 +31,5 @@ class FriendshipsController < ApplicationController
     end
 
     def destroy
-    end
-
-    private
-
-    def inverse_friendship_exists
-        # Check to see if the inverse friendship exists. If it does
-        ## Set pending to false and save
-        ## Get inverse friendship and set pending to false and save
     end
 end
