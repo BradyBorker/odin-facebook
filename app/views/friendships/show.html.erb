@@ -2,7 +2,7 @@
 <h1>Active Friends</h1>
 <ul>
     <% @active_friendships.each do |friendship| %>
-        <li><% friendship.email %></li>
+        <li><%= friendship.friend.email %></li>
     <% end %>
 </ul>
 
@@ -10,13 +10,13 @@
 <h1>Pending Friend Invitations</h1>
 <table>
     <% @pending_friendships.each do |friendship| %>
-        <% friend = friendship.friend %>
+        <% invitation_sender = friendship.user %>
         <tr>
             <td>
-                <%= friend.email %>
+                <%= invitation_sender.email %>
             </td>
             <td>
-                <%= link_to 'Accept Invitation', friendship_path(current_user, friend_id: friend.id), data: { 'turbo-method': :put } %>
+                <%= link_to 'Accept Invitation', friendship_path(current_user, friend_id: invitation_sender.id), data: { 'turbo-method': :put } %>
             </td>
         </tr>
     <% end %>
