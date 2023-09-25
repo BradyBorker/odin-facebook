@@ -26,9 +26,8 @@ class FriendshipsController < ApplicationController
     end
 
     def update
-        # In the future should change this so the find is based on Friendship id
-        @friendship = Friendship.find_by(user_id: params[:friend_id], friend_id: current_user.id)
-        
+        @friendship = Friendship.find(params[:id])
+
         if @friendship
             @friendship.pending = false
             @friendship.save

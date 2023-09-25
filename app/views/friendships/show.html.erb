@@ -16,7 +16,7 @@
                 <%= invitation_sender.email %>
             </td>
             <td>
-                <%= link_to 'Accept Invitation', friendship_path(current_user, friend_id: invitation_sender.id), data: { 'turbo-method': :put } %>
+                <%= link_to 'Accept Invitation', friendship_path(friendship, friend_id: invitation_sender.id), data: { 'turbo-method': :put } %>
             </td>
         </tr>
     <% end %>
