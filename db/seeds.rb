@@ -23,3 +23,7 @@ user = User.new
 user.email = 'test2@example.com'
 user.password = 'testing2'
 user.save!
+
+user2 = User.second
+user2.friendships.build(friend_id: User.first.id, pending: true)
+user2.save
