@@ -47,11 +47,8 @@ class FriendshipsController < ApplicationController
 
     def check_for_inverse
         if current_user.inverse_friendships.find_by(user_id: params[:friend_id], pending: false)
-            friendship = current_user.friendships.find_by(friend_id: params[:friend_id], pending: true)
-            if friendship
-                friendship.pending = false
-                friendship.save
-            end
+            @friendship.pending = false
+            @friendship.save
         end
     end
 end
