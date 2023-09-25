@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 User.delete_all
+Friendship.delete_all
 
 user = User.new
 user.email = 'test@example.com'

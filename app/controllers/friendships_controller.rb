@@ -3,8 +3,8 @@ class FriendshipsController < ApplicationController
     
     def show
         # Show active friendships and pending friendship invitations
-        @active_friendships = current_user.friendships.where(pending: false)
-        @pending_friendships = current_user.friendships.where(pending: true)
+        @active_friendships = current_user.friendships.includes(:friend).where(pending: false)
+        @pending_friendships = current_user.friendships.includes(:friend).where(pending: true)
     end
 
     def create
@@ -28,7 +28,7 @@ class FriendshipsController < ApplicationController
             @friendship.pending = false
             @friendship.save
             flash[:notice] = 'Friend Invitation Accepted'
-            redirect_to(friendships_path(friend_id: params[:friend_id], pending_status: false), method: 'post')
+            redirect_to(friendships_path(friend_id: params[:friend_id], pending_status: false))
         else
             flash[:alert] = 'Failed to Accept Friend Invitation'
             redirect_back(fallback_location: root_path)
