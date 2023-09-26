@@ -9,20 +9,35 @@
 User.delete_all
 Friendship.delete_all
 
-user = User.new
-user.email = 'test@example.com'
-user.password = 'testing'
-user.save!
+user = User.create(
+    email: 'testing@example.com',
+    password: 'testing',
+    user_information_attributes:
+        {
+            first_name: 'test',
+            last_name: '0'
+        }
+)
 
-user = User.new
-user.email = 'test1@example.com'
-user.password = 'testing1'
-user.save!
+user = User.create(
+    email: 'testing@example.com',
+    password: 'testing',
+    user_information_attributes:
+        {
+            first_name: 'test',
+            last_name: '1'
+        }
+)
 
-user = User.new
-user.email = 'test2@example.com'
-user.password = 'testing2'
-user.save!
+user = User.create(
+    email: 'testing@example.com',
+    password: 'testing',
+    user_information_attributes:
+        {
+            first_name: 'test',
+            last_name: '2'
+        }
+)
 
 user2 = User.second
 user2.friendships.build(friend_id: User.first.id, pending: true)
