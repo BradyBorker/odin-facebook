@@ -14,6 +14,8 @@ class User < ApplicationRecord
 
   has_many :likes
 
+  has_many :comments
+
   has_one :user_information
   accepts_nested_attributes_for :user_information
 
