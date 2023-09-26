@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   # root "articles#index"
   
   # Temporary root path:
-  root 'friendships#index'
+  root 'posts#index'
 
   resources :users, only: [:index] do
     resource :user_information, only: [:index]
-    resources :posts, only: [:index]
+    resources :posts, only: [:index, :new, :create]
   end
 
   resources :posts, only: [:index]
