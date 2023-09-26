@@ -1,12 +1,7 @@
 class FriendshipsController < ApplicationController
     before_action :authenticate_user!
 
-    def index
-        puts 'Inside Index'
-    end
-
     def show
-        # Show active friendships and pending friendship invitations
         @active_friendships = current_user.friendships.includes(:friend).where(pending: false)
         @pending_friendships = current_user.inverse_friendships.includes(:user).where(pending: true)
     end
