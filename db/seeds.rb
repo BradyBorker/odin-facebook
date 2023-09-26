@@ -9,7 +9,7 @@
 User.delete_all
 Friendship.delete_all
 
-user = User.create(
+User.create(
     email: 'testing@example.com',
     password: 'testing',
     user_information_attributes:
@@ -19,8 +19,8 @@ user = User.create(
         }
 )
 
-user = User.create(
-    email: 'testing@example.com',
+User.create(
+    email: 'testing1@example.com',
     password: 'testing',
     user_information_attributes:
         {
@@ -29,8 +29,8 @@ user = User.create(
         }
 )
 
-user = User.create(
-    email: 'testing@example.com',
+User.create(
+    email: 'testing2@example.com',
     password: 'testing',
     user_information_attributes:
         {
