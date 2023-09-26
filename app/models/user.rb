@@ -16,4 +16,8 @@ class User < ApplicationRecord
   def friend_invitations_count
     inverse_friendships.where(pending: true).count.to_s
   end
+
+  def display_name
+    "#{user_information.first_name} #{user_information.last_name}"
+  end
 end

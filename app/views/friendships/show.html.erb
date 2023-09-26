@@ -2,7 +2,7 @@
 <h1>Active Friends</h1>
 <ul>
     <% @active_friendships.each do |friendship| %>
-        <li><%= friendship.friend.email %></li>
+        <li><%= friendship.friend.display_name %></li>
     <% end %>
 </ul>
 
