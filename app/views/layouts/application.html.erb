@@ -14,10 +14,16 @@
   <body>
     <% if user_signed_in? %>
       <div class="nav-bar">
+        <div class="logo">
+          <%= link_to image_tag("gem", alt: "Gem"), root_path %>
+        </div>
+
         <div class="friends-container">
           <!-- SVG and number of notifications -->
-          <h2>Friendship Icon</h2>
-          <div class="friend_invitations_count"><%= current_user.friend_invitations_count %></div>
+          <div class="friend-invites">
+            <%= image_tag("friend_icon", alt: "Friend Icon") %>
+            <div class="friend_invitations_count"><%= current_user.friend_invitations_count %></div>
+          </div>
         </div>
       </div>
     <% end %>

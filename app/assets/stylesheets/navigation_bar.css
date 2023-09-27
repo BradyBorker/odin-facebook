@@ -1,0 +1,29 @@
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100vw;
+    height: 50px;
+    background-color: var(--nav-bar-background);
+}
+
+.logo {
+    height: auto;
+    filter: invert(21%) sepia(94%) saturate(1958%) hue-rotate(343deg) brightness(84%) contrast(105%);
+    transform: scale(1.5)
+}
+
+.friends-container {
+}
+
+.friend-invites {
+    position: relative;
+    width: 30px;
+}
+
+.friend_invitations_count {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
