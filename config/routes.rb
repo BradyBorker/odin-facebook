@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resource :user_information, only: [:index]
   end
 
+  resource :friend_invitations, only: [:new, :create, :destroy]
+
   resources :posts, only: [:index, :new, :create] do
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create]
