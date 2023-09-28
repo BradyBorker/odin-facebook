@@ -1,7 +1,4 @@
-class FriendInvitationsController < ApplicationController
-    def new
-    end
-    
+class FriendInvitationsController < ApplicationController    
     def create
         @invitation = current_user.sent_invitations.build(receiver_id: params[:recipient], pending: true)
 
@@ -11,18 +8,6 @@ class FriendInvitationsController < ApplicationController
         else
             flash[:alert] = 'Invitation Failed to Sent'
             render :new
-        end
-    end
-
-    def update
-        @invitation = FriendInvitation.find(id: params[:id])
-        @invitation.pending = false
-
-        if @invitation.save
-            redirect_to controller: :friendships, action: :create
-        else
-            flash[:alert] = 'Unable to Accept Invitation'
-            redirect_back(fallback_location: root_path)
         end
     end
 

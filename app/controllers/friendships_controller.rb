@@ -2,47 +2,25 @@ class FriendshipsController < ApplicationController
     before_action :authenticate_user!
 
     def show
-        @active_friendships = current_user.friendships.includes(:friend).where(pending: false)
+        @active_friendships = current_user.friendships.includes(:friend)
         @pending_friendships = current_user.inverse_friendships.includes(:user).where(pending: true)
     end
 
     def create
-        @current_user_friendship = current_user.friendships.build(friend_id: params[:friend_id])
-        
-        if @friendship
-            @friendship.save
-            check_for_inverse
-            flash[:notice] = 'Invitation Sent' if flash.empty?
+        @friend = User.find(params[:friend_id])
+        @friendship_current = current_user.friendships.build(friend_id: params[:friend_id])
+        @friendship_friend = @friend.friendships.build(friend_id: current_user.id)
+
+        if @friendship_current.save && @friendship_friend.save
+            User.destroy_invitation({ invitation: params[:invitation_id], sender: params[:friend_id] })
+            flash[:notice] = 'Friend added'
         else
-            flash[:alert] = 'Invitation Failed To Send'
+            flash[:alert] = 'Frient not added'
         end
 
         redirect_back(fallback_location: root_path)
     end
 
-    def update
-        @friendship = Friendship.find(params[:id])
-
-        if @friendship
-            @friendship.pending = false
-            @friendship.save
-            flash[:notice] = 'Friend Invitation Accepted'
-            create
-        else
-            flash[:alert] = 'Failed to Accept Friend Invitation'
-            redirect_back(fallback_location: root_path)
-        end
-    end
-
     def destroy
-    end
-
-    private
-
-    def check_for_inverse
-        if current_user.inverse_friendships.find_by(user_id: params[:friend_id], pending: false)
-            @friendship.pending = false
-            @friendship.save
-        end
     end
 end

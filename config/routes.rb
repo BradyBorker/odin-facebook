@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resource :user_information, only: [:index]
   end
 
-  resource :friend_invitations, only: [:new, :create, :update, :destroy]
+  resource :friend_invitations, only: [:create, :destroy]
 
   resources :posts, only: [:index, :new, :create] do
     resources :likes, only: [:create, :destroy]

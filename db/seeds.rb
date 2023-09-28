@@ -41,3 +41,6 @@ User.create(
             last_name: '2'
         }
 )
+
+user2 = User.second
+user2.sent_invitations.create(receiver_id: User.first.id)

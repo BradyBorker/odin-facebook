@@ -22,6 +22,11 @@ class User < ApplicationRecord
   has_one :user_information
   accepts_nested_attributes_for :user_information
 
+  def self.destroy_invitation(ids)
+    user = User.find(ids[:sender])
+    user.sent_invitations.destroy(ids[:invitation])
+  end
+
   def friend_invitations_count
     inverse_friendships.where(pending: true).count.to_s
   end
