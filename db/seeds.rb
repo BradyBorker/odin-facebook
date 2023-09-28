@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+Comment.delete_all
+Like.delete_all
+Post.delete_all
 User.delete_all
 Friendship.delete_all
 
@@ -38,7 +41,3 @@ User.create(
             last_name: '2'
         }
 )
-
-user2 = User.second
-user2.friendships.build(friend_id: User.first.id, pending: true)
-user2.save
