@@ -19,3 +19,7 @@
     margin: 0;
     --nav-bar-background: #a8a29e;
  }
+
+ body {
+    background-color: #f5f5f4;
+ }
