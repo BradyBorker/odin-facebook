@@ -2,8 +2,8 @@ class FriendshipsController < ApplicationController
     before_action :authenticate_user!
 
     def show
-        @active_friendships = current_user.friendships.includes(:friend)
-        @pending_invitations = current_user.received_invitations.includes(:sender)
+        @active_friendships = current_user.friendships.includes(friend: :user_information)
+        @pending_invitations = current_user.received_invitations.includes(sender: :user_information)
     end
 
     def create
