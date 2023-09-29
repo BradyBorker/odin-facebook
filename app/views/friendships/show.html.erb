@@ -9,7 +9,7 @@
 
 <h1>Pending Friend Invitations</h1>
 <table>
-    <% current_user.received_invitations.each do |invitation| %>
+    <% @pending_invitations.each do |invitation| %>
         <tr>
             <td><%= invitation.sender.display_name %></td>
             <td><%= link_to "Accept Invite", friendships_path(friend_id: invitation.sender.id, invitation_id: invitation.id), data: {'turbo-method': :post} %></td>

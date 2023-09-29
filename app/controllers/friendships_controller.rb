@@ -3,19 +3,22 @@ class FriendshipsController < ApplicationController
 
     def show
         @active_friendships = current_user.friendships.includes(:friend)
-        @pending_friendships = current_user.inverse_friendships.includes(:user).where(pending: true)
+        @pending_invitations = current_user.received_invitations.includes(:sender)
     end
 
     def create
-        @friend = User.find(params[:friend_id])
-        @friendship_current = current_user.friendships.build(friend_id: params[:friend_id])
-        @friendship_friend = @friend.friendships.build(friend_id: current_user.id)
+        # TODO: Update this to build or find
+        # TODO: Create Friendship connection in Friendship class method
+        # @friendship_current = current_user.friendships.build(friend_id: params[:friend_id])
+        # @friendship_friend = @friend.friendships.build(friend_id: current_user.id)
+        
+        @friendship_connection = Friendship.create_friendship({ current_user: current_user.id, friend: params[:friend_id] })
 
-        if @friendship_current.save && @friendship_friend.save
-            User.destroy_invitation({ invitation: params[:invitation_id], sender: params[:friend_id] })
+        if @friendship_connection
+            FriendInvitation.destroy_invitation({ invitation: params[:invitation_id] })
             flash[:notice] = 'Friend added'
         else
-            flash[:alert] = 'Frient not added'
+            flash[:alert] = 'Friend not added'
         end
 
         redirect_back(fallback_location: root_path)
