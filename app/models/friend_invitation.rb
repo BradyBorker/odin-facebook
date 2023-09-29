@@ -4,7 +4,7 @@ class FriendInvitation < ApplicationRecord
 
 
     def self.destroy_invitation(id)
-        invitation = Invitation.find(id[:invitation])
+        invitation = FriendInvitation.find(id[:invitation])
         invitation.destroy
     end
 end
