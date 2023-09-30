@@ -5,6 +5,6 @@
 <div class="posts-container">
     <% @posts.each do |post| %>
         <%= render "post", post: post %>
-        <%= render "comments/new_comment", comment: @comment, post_id: post.id %>
+        <%= render "comments/new_comment", comment: @comment, post: post %>
     <% end %>
 </div>
