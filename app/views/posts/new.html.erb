@@ -1,4 +1,10 @@
 <!-- Form for Post -->
 <turbo-frame id="post_form">
-    <h1>Inside new.html.erb</h1>
+    <%= form_with model: @post do |form| %>
+        <div class="input_container">
+            <%= form.text_area :body, placeholder: "Write some thoughts" %>
+        </div>
+        
+        <%= form.button "Post" %>
+    <% end %>
 </turbo-frame>
