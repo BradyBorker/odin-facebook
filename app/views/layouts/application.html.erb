@@ -21,8 +21,11 @@
         <div class="friends-container">
           <!-- SVG and number of notifications -->
           <div class="friend-invitations">
-            <%= image_tag("friend_icon", alt: "Friend Icon") %>
+            <%= link_to image_tag("friend_icon", alt: "Friend Invitation"), friendship_path(current_user) %>
             <div class="friend_invitations_count"><%= current_user.friend_invitations_count %></div>
+          </div>
+          <div class="add-friends">
+            <%= link_to image_tag("friend_add", alot: "Add Friend"), users_path %>
           </div>
         </div>
       </div>

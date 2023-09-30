@@ -15,6 +15,8 @@
 }
 
 .friends-container {
+    display: flex;
+    gap: 8px;
 }
 
 .friend-invitations {

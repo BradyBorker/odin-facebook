@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
     def index
         @post = Post.new
+        # TODO: Make this so only current user's posts and friend's posts are grabbed
         @posts = Post.includes(:comments, :likes, user: :user_information).limit(10).order(created_at: :desc)
     end
 
