@@ -23,7 +23,8 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :user_information
 
   def friend_invitations_count
-    inverse_friendships.where(pending: true).count.to_s
+    # inverse_friendships.where(pending: true).count.to_s
+    received_invitations.count.to_s
   end
 
   def display_name

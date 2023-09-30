@@ -1,1 +1,6 @@
-<turbo-frame id="post_form" src=<%= new_post_path %>></turbo-frame>
+<turbo-frame id="post-form" src=<%= new_post_path %>></turbo-frame>
+
+<h1>Posts:</h1>
+<div class="posts-container">
+    <%= render partial: "post", collection: @posts %>
+</div>

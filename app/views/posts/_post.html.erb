@@ -1,0 +1,19 @@
+<div class="post-container">
+    <div class="post-heading">
+        <div class="author-name"><%= post.user.display_name %></div>
+        <div class="create-date"><%= Date.parse(post.created_at.to_s, '%Y-%m-%d')%></div>
+        <div class="post-likes">Like Icon</div>
+    </div>
+    <div class="body-container">
+        <div class="body">
+            <%= post.body %>
+        </div>
+    </div>
+    <div class="comments-container">
+        <% post.comments.each do |comment| %>
+            <div class="comment">
+                <%= comment.body %>
+            </div>
+        <% end %>
+    </div>
+</div>
