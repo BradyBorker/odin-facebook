@@ -1,0 +1,8 @@
+<%= form_with model: comment, url: post_comments_path(post_id) do |form| %>
+    <div class="input-container">
+        <%= form.label :body, "Comment" %>
+        <%= form.text_area :body, placeholder: "Write a comment" %>
+    </div>
+
+    <%= form.button "Comment" %>
+<% end %>

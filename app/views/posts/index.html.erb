@@ -3,5 +3,8 @@
 
 <h1>Posts:</h1>
 <div class="posts-container">
-    <%= render partial: "post", collection: @posts %>
+    <% @posts.each do |post| %>
+        <%= render "post", post: post %>
+        <%= render "comments/new_comment", comment: @comment, post_id: post.id %>
+    <% end %>
 </div>
