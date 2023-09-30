@@ -12,7 +12,10 @@
     </div>
 
     <div class="comments-container">
-        <% post.comments.each do |comment| %>
+        <% post.comments.includes(user: :user_information) do |comment| %>
+            <div class="comment-header">
+                <%= comment.user.display_name %>
+            </div>
             <div class="comment">
                 <%= comment.body %>
             </div>

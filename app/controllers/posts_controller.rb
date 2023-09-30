@@ -5,7 +5,7 @@ class PostsController < ApplicationController
         @post = Post.new
         @comment = Comment.new
         # TODO: Make this so only current user's posts and friend's posts are grabbed
-        @posts = Post.includes(:comments, :likes, user: :user_information).limit(10).order(created_at: :desc)
+        @posts = Post.includes(:comments, :likes, user: :user_information).order(created_at: :desc).limit(10)
     end
 
     def create
