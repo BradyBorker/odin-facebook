@@ -1,0 +1,13 @@
+.new-post {
+    border: 1px solid var(--ruby-red);
+    border-radius: 3px;
+    padding: 10px;
+    grid-column: 2 / 4;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.new-post form {
+    border: 1px solid purple;
+
+}

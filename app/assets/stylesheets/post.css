@@ -1,0 +1,8 @@
+.posts-container {
+    grid-column: 2 / 4;
+}
+
+.post {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

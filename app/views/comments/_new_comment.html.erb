@@ -1,6 +1,5 @@
 <%= form_with model: [post, comment] do |form| %>
     <div class="input-container">
-        <%= form.label :body, "Comment" %>
         <%= form.text_area :body, placeholder: "Write a comment" %>
     </div>
 
