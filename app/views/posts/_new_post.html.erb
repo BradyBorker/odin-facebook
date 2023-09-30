@@ -1,0 +1,7 @@
+<%= form_with model: @post do |form| %>
+    <div class="input-container">
+        <%= form.text_area :body, placeholder: "Write some thoughts" %>
+    </div>
+    
+    <%= form.button "Post" %>
+<% end %>
