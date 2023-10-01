@@ -4,8 +4,7 @@ class PostsController < ApplicationController
     def index
         @post = Post.new
         @comment = Comment.new
-        # TODO: Make this so only current user's posts and friend's posts are grabbed
-        @posts = Post.includes(:comments, :likes, user: :user_information).order(created_at: :desc).limit(10)
+        @posts = Post.timeline_posts(current_user.id).includes(:comments, :likes, user: :user_information).limit(10)
     end
 
     def create
