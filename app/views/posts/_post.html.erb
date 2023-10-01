@@ -1,24 +1,22 @@
-<div class="post">
-    <div class="post-heading">
-        <div class="author-name"><%= post.user.display_name %></div>
-        <div class="create-date"><%= Date.parse(post.created_at.to_s, '%m-%d-%Y') %></div>
-        <div class="post-likes"><%= image_tag("thumb_up", alt: "Like Post") %></div>
-    </div>
+<div class="post-heading">
+    <div class="author-name"><%= post.user.display_name %></div>
+    <div class="create-date"><%= Date.parse(post.created_at.to_s, '%m-%d-%Y') %></div>
+    <div class="post-likes"><%= image_tag("thumb_up", alt: "Like Post") %></div>
+</div>
 
-    <div class="body-container">
-        <div class="body">
-            <%= post.body %>
+<div class="body-container">
+    <div class="body">
+        <%= post.body %>
+    </div>
+</div>
+
+<div class="comments-container">
+    <% post.comments.includes(user: :user_information).each do |comment| %>
+        <div class="comment-header">
+            <%= comment.user.display_name %>
         </div>
-    </div>
-
-    <div class="comments-container">
-        <% post.comments.includes(user: :user_information).each do |comment| %>
-            <div class="comment-header">
-                <%= comment.user.display_name %>
-            </div>
-            <div class="comment">
-                <%= comment.body %>
-            </div>
-        <% end %>
-    </div>
+        <div class="comment">
+            <%= comment.body %>
+        </div>
+    <% end %>
 </div>

@@ -1,8 +1,6 @@
 <div class="new-post">
     <%= form_with model: @post do |form| %>
-        <div class="input-container">
-            <%= form.text_area :body, placeholder: "Write some thoughts" %>
-        </div>
+        <%= form.text_area :body, placeholder: "Write some thoughts" %>
     
         <%= form.button "Post" %>
     <% end %>
