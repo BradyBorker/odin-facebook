@@ -1,19 +1,21 @@
-<!-- Active and Pending Friend Invites -->
-<h1>Active Friends</h1>
-<ul>
-    <% @active_friendships.each do |friendship| %>
-        <li><%= friendship.friend.display_name %></li>
-    <% end %>
-</ul>
+<div class="active-friends">
+    <div>My Friends</div>
+    <ul>
+        <% @active_friendships.each do |friendship| %>
+            <li><%= friendship.friend.display_name %></li>
+        <% end %>
+    </ul>
+</div>
 
-
-<h1>Pending Friend Invitations</h1>
-<table>
-    <% @pending_invitations.each do |invitation| %>
-        <tr>
-            <td><%= invitation.sender.display_name %></td>
-            <td><%= link_to "Accept Invite", friendships_path(friend_id: invitation.sender.id, invitation_id: invitation.id), data: {'turbo-method': :post} %></td>
-        </tr>
-    <% end %>
-</table>
+<div class="pending-invitations">
+    <div>Pending Friend Invitations</div>
+    <table>
+        <% @pending_invitations.each do |invitation| %>
+            <tr>
+                <td><%= invitation.sender.display_name %></td>
+                <td><%= link_to "Accept Invititation", friendships_path(friend_id: invitation.sender.id, invitation_id: invitation.id), data: {'turbo-method': :post} %></td>
+            </tr>
+        <% end %>
+    </table>
+</div>
     

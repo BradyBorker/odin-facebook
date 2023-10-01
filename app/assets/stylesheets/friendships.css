@@ -1,0 +1,42 @@
+.active-friends {
+    grid-column: span 2;
+    grid-row: span 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    border-right: 3px solid var(--ruby-red);
+}
+
+.active-friends > div {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.active-friends li {
+    list-style-type: none;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.pending-invitations {
+    grid-column: span 2;
+    grid-row: span 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.pending-invitations > div {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.pending-invitations td {
+    font-size: 18px;
+}

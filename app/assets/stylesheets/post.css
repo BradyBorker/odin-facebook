@@ -1,6 +1,6 @@
 .posts-container {
     grid-column: 1 / -1;
-    border-top: 5px solid var(--ruby-red);
+    border-top: 5px solid var(--text-color);
     display: grid;
     grid-template-columns: repeat(6, 1fr);
 }
