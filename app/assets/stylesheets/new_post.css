@@ -3,7 +3,7 @@
     border: 3px solid var(--ruby-red);
     border-radius: 3px;
     grid-column: 2 / 4;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     margin-top: 10px;
     padding: 8px;
 }
@@ -22,7 +22,6 @@
     padding: 3px;
     outline-color: var(--ruby-red);
     outline-style: outset;
-    background-color: var(--text-area-color);
     border-radius: 3px;
     color: var(--text-color);
 }
@@ -31,7 +30,6 @@
     grid-column: 4 / 6;
     margin-top: 5px;
     border-radius: 3px;
-    background-color: var(--button-color);
     border-color: var(--ruby-red);
     font-size: 18px;
 }

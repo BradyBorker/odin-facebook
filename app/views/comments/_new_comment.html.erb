@@ -1,7 +1,7 @@
-<%= form_with model: [post, comment] do |form| %>
-    <div class="input-container">
+<div class="new-comment">
+    <%= form_with model: [post, comment] do |form| %>
         <%= form.text_area :body, placeholder: "Write a comment" %>
-    </div>
-
-    <%= form.button "Comment" %>
-<% end %>
+    
+        <%= form.button "Comment" %>
+    <% end %>
+</div>

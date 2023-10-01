@@ -17,9 +17,9 @@
 :root {
    --nav-bar-background: #a8a29e;
    --ruby-red: #b91c1c;
-   --text-area-color: #e7e5e4;
+   --text-area-color: #d6d3d1;
    --text-color: #450a0a;
-   --button-color: #e7e5e4;
+   --button-color: #d6d3d1;
    --container-background-color: #78716c;
 }
 
@@ -27,6 +27,7 @@
    padding: 0;
    margin: 0;
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color: var(--text-color)
 }
 
 body {
@@ -34,6 +35,14 @@ body {
    display: flex;
    flex-direction: column;
    align-items: center;
+}
+
+button {
+   background-color: var(--button-color);
+}
+
+textarea {
+   background-color: var(--text-area-color);
 }
 
 .content {

@@ -16,16 +16,25 @@
 
 .friends-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 8px;
 }
 
 .friend-invitations {
     position: relative;
     width: 30px;
+    padding: 3px;
+
 }
 
 .friend_invitations_count {
     position: absolute;
     top: 0;
     right: 0;
+}
+
+.add-friends {
+    width: 30px;
+    padding: 3px;
 }
