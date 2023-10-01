@@ -4,22 +4,19 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :friendships
+  has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
 
-  has_many :inverse_friendships, class_name: 'Friendship', foreign_key: :friend_id
-  has_many :inverse_friends, through: :inverse_friendships, source: :user
-
-  has_many :sent_invitations, class_name: 'FriendInvitation', foreign_key: :sender_id
+  has_many :sent_invitations, class_name: 'FriendInvitation', foreign_key: :sender_id, dependent: :destroy
   has_many :received_invitations, class_name: 'FriendInvitation', foreign_key: :receiver_id
 
-  has_many :posts
+  has_many :posts, dependent: :destroy
 
-  has_many :likes
+  has_many :likes, dependent: :destroy
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
-  has_one :user_information
+  has_one :user_information, dependent: :destroy
   accepts_nested_attributes_for :user_information
 
   scope :not_friends, ->(current_user) { where.not(id: Friendship.where(user_id: current_user).pluck(:friend_id).uniq.push(current_user)) }
