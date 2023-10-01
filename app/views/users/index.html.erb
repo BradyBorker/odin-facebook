@@ -1,8 +1,9 @@
-<table>
+<div class="invitations-container">
+    <div class="label">Friend Invitations</div>
     <% @users.each do |user| %>
-        <tr>
-            <td><%= user.display_name %></td>
-            <td><%= link_to "Send Invite", friend_invitations_path, data: { 'turbo-method': :put } %></td>
-        </tr>
+        <div class="invitation">
+            <%= user.display_name %>
+            <%= link_to "Send Invite", friend_invitations_path, data: { 'turbo-method': :put } %>
+        </div>
     <% end %>
-</table>
+</div>

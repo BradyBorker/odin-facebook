@@ -40,3 +40,27 @@
 .pending-invitations td {
     font-size: 18px;
 }
+
+.invitations-container {
+    grid-column: 2 / 4;
+    grid-row: span 2;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.invitations-container .label {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.invitation {
+    font-size: 18px;
+    width: 50%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
