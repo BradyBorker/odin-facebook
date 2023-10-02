@@ -18,6 +18,13 @@
     grid-template-rows: repeat(4, min-height);
 }
 
+.post-heading {
+    grid-column: 1 / -1;
+    max-width: max-content;
+    display: grid;
+    gap: 3px;
+}
+
 .post-likes {
     position: relative;
     width: 40%;
@@ -28,13 +35,6 @@
     position: absolute;
     top: 0;
     right: 0;
-}
-
-.post-heading {
-    grid-column: 1 / -1;
-    max-width: max-content;
-    display: grid;
-    gap: 3px;
 }
 
 .body-container {
