@@ -18,12 +18,23 @@
     grid-template-rows: repeat(4, min-height);
 }
 
+.post-likes {
+    position: relative;
+    width: 40%;
+    padding-top: 5px;
+}
+
+.likes-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 .post-heading {
     grid-column: 1 / -1;
-    max-width: fit-content;
+    max-width: max-content;
     display: grid;
-    grid-template-rows: repeat(max-height);
-    gap: 3px
+    gap: 3px;
 }
 
 .body-container {
