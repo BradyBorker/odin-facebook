@@ -1,6 +1,5 @@
 .user-information-container {
     grid-column: span 1;
-    border: 3px solid var(--ruby-red);
     border-radius: 3px;
     margin-top: 10px;
     margin-left: 10px;
@@ -15,10 +14,20 @@
     text-align: center;
 }
 
+.inner-information {
+    border: 3px solid var(--ruby-red);
+    padding: 5px;
+    margin-top: 10px;
+}
+
 .information {
     display: flex;
     flex-direction: column;
     gap: 5px;
+
+}
+
+.information:not(:first-child) {
     margin-top: 15px;
 }
 
