@@ -1,16 +1,12 @@
 class FriendInvitationsController < ApplicationController    
     def create
-        @invitation = current_user.sent_invitations.build(receiver_id: params[:recipient], pending: true)
+        @invitation = current_user.sent_invitations.create(receiver_id: params[:recipient])
 
-        if @invitation.save
+        if @invitation
             flash[:notice] = 'Invitation Successfully Sent'
             redirect_back(fallback_location: root_path)
         else
             flash[:alert] = 'Invitation Failed to Sent'
-            render :new
         end
-    end
-
-    def destroy
     end
 end

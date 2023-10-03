@@ -19,7 +19,7 @@ class User < ApplicationRecord
   has_one :user_information, dependent: :destroy
   accepts_nested_attributes_for :user_information
 
-  scope :not_friends, ->(current_user) { where.not(id: Friendship.where(user_id: current_user).pluck(:friend_id).uniq.push(current_user)) }
+  scope :not_friends, ->(current_user) { where.not(id: Friendship.where(user_id: current_user).uniq.pluck(:friend_id).push(current_user)) }
 
   def friend_invitations_count
     received_invitations.count.to_s

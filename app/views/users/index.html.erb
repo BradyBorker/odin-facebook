@@ -3,7 +3,13 @@
     <% @users.each do |user| %>
         <div class="invitation">
             <%= user.display_name %>
-            <%= link_to "Send Invite", friend_invitations_path, data: { 'turbo-method': :put } %>
+
+            
+            <% if user.received_invitations.where(sender_id: current_user.id).any? %> 
+                <%= content_tag(:div, "Invitation Sent") %>
+            <% else %>
+                <%= link_to "Send Invite", friend_invitations_path(recipient: user.id), data: { 'turbo-method': :post } %>
+            <% end %>
         </div>
     <% end %>
 </div>
