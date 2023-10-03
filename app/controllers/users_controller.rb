@@ -4,4 +4,8 @@ class UsersController < ApplicationController
     def index
         @users = User.not_friends(current_user.id).includes(:user_information)
     end
+
+    def show
+        
+    end
 end
