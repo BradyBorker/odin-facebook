@@ -1,5 +1,6 @@
 <div class="user-information-container">
     <div class="header">My Information</div>
+    <!-- TODO: Add profile image here-->
     <div class="information">
         <div>Email:</div>
         <div><%= @user.email %></div>
@@ -14,6 +15,11 @@
     </div>
 </div>
     
-<div class="user-posts-container">
+<div class="posts-container user-posts-container">
     <div class="header">My Posts</div>
+    <% @posts.each do |post| %>
+        <div class="post">
+            <%= render "posts/post", post: post %>
+        </div>
+    <% end %>
 </div>
