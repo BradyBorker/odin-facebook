@@ -14,7 +14,5 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
 
-  resources :comments, only: [:index]
-
   resources :friendships, only: [:show, :create, :update, :destroy]
 end

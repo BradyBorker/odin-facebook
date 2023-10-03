@@ -1,0 +1,36 @@
+.user-information-container {
+    grid-column: span 1;
+    border: 3px solid var(--ruby-red);
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-left: 10px;
+    height: max-content;
+    padding: 10px;
+}
+
+.user-information-container .header {
+    font-size: 24px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.user-posts-container {
+    grid-column: span 3;
+}
+
+.user-posts-container .header {
+    font-size: 24px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
