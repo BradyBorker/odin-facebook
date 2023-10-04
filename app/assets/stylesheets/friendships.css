@@ -31,14 +31,17 @@
     margin-top: 10px;
 }
 
-.pending-invitations > div {
+.pending-invitations > div:first-child {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.pending-invitations td {
+.pending-invitations .pending-container {
     font-size: 18px;
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
 }
 
 .invitations-container {
