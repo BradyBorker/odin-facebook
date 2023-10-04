@@ -1,5 +1,5 @@
 /* Sign Up Form */
-.sign-up-form-container {
+.sign-up-form-container, .sign-in-form-container {
     background-color: var(--container-background-color);
     grid-column: 1 / -1;
     display: flex;
@@ -28,7 +28,6 @@
 
 .first_name, .last_name, .password {
     grid-column: span 2;
-    grid-row: span 1;
 
     display: flex;
     flex-direction: column;
@@ -68,3 +67,41 @@
 }
 
 /* Sign In Form */
+.sign-in-form-container .header {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.sign-in-form-container form {
+    background-color: var(--nav-bar-background);
+    border: 3px solid var(--ruby-red);
+    border-radius: 3px;
+    width: 30%;
+    padding: 10px;
+    margin-top: 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(4, max-content);
+}
+
+.sign-in-form-container .password {
+    grid-column: 1 / -1;
+}
+
+.actions.log-in > input {
+    padding: 3px;
+    margin-right: 15px;
+    border: 3px solid var(--ruby-red);
+    border-radius: 3px;
+    background-color: var(--text-area-color);
+}
+
+.actions.log-in {
+    grid-row: 4 / 5;
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
