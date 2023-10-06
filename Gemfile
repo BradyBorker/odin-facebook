@@ -74,3 +74,5 @@ end
 gem "devise", "~> 4.9"
 
 gem 'omniauth-facebook'
+
+gem 'omniauth-rails_csrf_protection'
