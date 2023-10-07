@@ -67,12 +67,8 @@
 }
 
 /* Sign In Form */
-.sign-in-form-container .header {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.sign-in-form-container form:first-of-type {
+.sign-in-form-container > form {
+    box-sizing: border-box;
     background-color: var(--nav-bar-background);
     border: 3px solid var(--ruby-red);
     border-radius: 3px;
@@ -106,6 +102,15 @@
     align-items: center;
 }
 
-.sign-in-form-container > button {
+.facebook-sign-in {
+    width: 50%;
+    margin-top: 10px;
+    color: white;
+}
 
+.facebook-sign-in form button {
+    background-color: #3b5998;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
 }
