@@ -1,7 +1,7 @@
 databases:
-  - name: odin_facebook
-    databaseName: odin_facebook
-    user: brady.barker
+  - name: mysite
+    databaseName: mysite
+    user: mysite
 
 services:
   - type: web
