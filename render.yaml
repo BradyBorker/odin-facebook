@@ -1,5 +1,5 @@
 databases:
-  - name: mysite
+  - name: odin-facebook
     databaseName: mysite
     user: mysite
 
