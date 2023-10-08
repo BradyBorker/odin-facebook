@@ -1,4 +1,6 @@
-<div class="sign-in-form-container">  
+<div class="sign-in-form-container">
+  <div class="header">Log In</div>
+  
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field email">
       <%= f.label :email %>
