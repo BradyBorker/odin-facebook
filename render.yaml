@@ -1,6 +1,6 @@
 databases:
-  - name: mysite
-    databaseName: brady.barker
+  - name: odin_facebook
+    databaseName: odin_facebook_production
     user: brady.barker
 
 services:
