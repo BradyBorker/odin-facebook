@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'my_registrations' }
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'my_registrations' }
   
-  # omniauth_callbacks: 'users/omniauth_callbacks' ## Place inside controllers above
+  # omniauth_callbacks: 'users/omniauth_callbacks' ## Place inside controllers above 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
