@@ -6,12 +6,15 @@
 }
 
 .post {
+    grid-column: 2 / 6;
     margin-top: 10px;
     margin-bottom: 10px;
-    grid-column: 2 / 6;
     border: 3px solid var(--ruby-red);
     border-radius: 3px;
     padding: 3px;
+    -webkit-box-shadow: -3px 10px 17px 0px rgba(69,10,10,1);
+    -moz-box-shadow: -3px 10px 17px 0px rgba(69,10,10,1);
+    box-shadow: -3px 10px 17px 0px rgba(69,10,10,1);
 
     display: grid;
     grid-template-columns: repeat(6, minmax(0, 1fr));
