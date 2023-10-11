@@ -1,10 +1,13 @@
 <div class="post-heading">
     <div class="author-name"><%= post.user.display_name %></div>
     <div class="create-date"><%= Date.parse(post.created_at.to_s, '%m-%d-%Y') %></div>
-    <div class="post-likes">
-        <%= link_to image_tag("thumb_up", alt: "Like Post"), post_likes_path(post), data: { "turbo-method": :post } %>
-        <div class="likes-count"><%= post.likes.count.to_s %></div>
-    </div>
+    
+    <%= turbo_frame_tag "counter" do %>
+        <div class="post-likes">
+            <%= link_to image_tag("thumb_up", alt: "Like Post"), post_likes_path(post), data: { "turbo-method": :post } %>
+            <div class="likes-count"><%= post.likes.count.to_s %></div>
+        </div>
+    <% end %>
 </div>
 
 <div class="body-container">
