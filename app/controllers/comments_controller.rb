@@ -10,7 +10,8 @@ class CommentsController < ApplicationController
             flash[:alert] = "Comment not created"
         end
 
-        redirect_to root_path
+        render turbo_stream: turbo_stream.append("comment_#{@comment.id}", partial: 'comment/comment',
+            locals: { post: @comment })
     end
 
     private
