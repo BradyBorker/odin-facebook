@@ -36,13 +36,15 @@
 .new-comment form {
     display: grid;
     grid-template-columns: repeat(6, minmax(0, 1fr));
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: 2fr 25px;
+    gap: 10px;
 }
 
 .new-comment textarea {
     grid-column: 1 / -1;
-    height: 25px;
-    resize: none;
+    height: 50px;
+    resize: vertical;
+    overflow: auto;
     padding: 3px;
     outline-color: var(--ruby-red);
     outline-style: outset;
@@ -51,6 +53,7 @@
 
 .new-comment button {
     grid-column: 1 / 3;
+    height: 25px;
     border-radius: 3px;
     border-color: var(--ruby-red);
     padding: 2px;
