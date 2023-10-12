@@ -15,14 +15,6 @@
 <div class="comments-container" id=<%= "comment-container_#{post.id}" %>>
     <div class="comment-label">Comments:</div>
     <% post.comments.each do |comment| %>
-        <!--<div class="comment">
-            <div class="comment-header">
-                <%= comment.user.display_name %>
-            </div>
-            <div class="comment-body">
-                <%= comment.body %>
-            </div>
-        </div>-->
         <%= render "comments/comment", comment: comment %>
     <% end %>
 </div>

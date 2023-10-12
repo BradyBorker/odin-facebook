@@ -1,6 +1,6 @@
 <div class="new-comment">
-    <%= form_with model: [post, comment] do |form| %>
-        <%= form.text_area :body, placeholder: "Write a comment" %>
+    <%= form_with model: [post, comment], data: { controller: "clear", action: "turbo:submit-end->clear#reset" } do |form| %>
+        <%= form.text_area :body, placeholder: "Write a comment", data: { clear_target: "textArea" } %>
     
         <%= form.button "Comment" %>
     <% end %>
