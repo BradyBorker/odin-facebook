@@ -17,12 +17,16 @@ class LikesController < ApplicationController
         # @like.destroy
         # update_counter_text
 
-        
+        @like = Like.find_by(post_id: params[:post_id], user_id: params[:id])
+        @like.destroy
+        update_counter_text
     end
 
     private
 
     def update_counter_text
+        @post ||= Post.find(params[:post_id])
+
         render turbo_stream:
             turbo_stream.replace("counter_#{@post.id}",
                 partial: 'likes/like_counter',
