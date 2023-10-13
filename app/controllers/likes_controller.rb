@@ -8,13 +8,16 @@ class LikesController < ApplicationController
         #    @like = @post.likes.create(user_id: current_user.id)
         #    update_counter_text
         # end
+
+        update_counter_text if @post.likes.create(user_id: current_user.id)
     end
 
     def destroy
         # @like = @post.likes.find_by(user_id: current_user.id)
         # @like.destroy
-
         # update_counter_text
+
+        
     end
 
     private
