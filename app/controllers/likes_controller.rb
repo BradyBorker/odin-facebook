@@ -1,23 +1,20 @@
 class LikesController < ApplicationController
     def create
         @post = Post.find(params[:post_id])
-        puts "MY POST HERE"
-        puts @post
 
-        if @post.likes.where(user_id: current_user.id).any?
-            destroy
-        else
-            @like = @post.likes.create(user_id: current_user.id)
-
-            update_counter_text
-        end
+        # if @post.likes.where(user_id: current_user.id).any?
+        #    destroy
+        # else
+        #    @like = @post.likes.create(user_id: current_user.id)
+        #    update_counter_text
+        # end
     end
 
     def destroy
-        @like = @post.likes.find_by(user_id: current_user.id)
-        @like.destroy
+        # @like = @post.likes.find_by(user_id: current_user.id)
+        # @like.destroy
 
-        update_counter_text
+        # update_counter_text
     end
 
     private
