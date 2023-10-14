@@ -15,7 +15,11 @@
     <% if user_signed_in? %>
       <div class="nav-bar">
         <div class="profile-icon">
-          <%= link_to render("users/profile_picture", user: User.find(current_user.id)), user_path(current_user) %>
+          <% if current_user.profile_picture.attached? %>
+              <%= link_to current_user.profile_picture, user_path(current_user.id) %>
+          <% else %>
+              <%= link_to image_tag("profile_icon", alt: "Profile"), user_path(current_user.id) %>
+          <% end %>
         </div>
 
         <div class="logo">

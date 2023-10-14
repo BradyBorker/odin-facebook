@@ -1,8 +1,15 @@
 <div class="user-information-container">
     <!--<div class="header">My Information</div>-->
     <div class="profile-picture">
-        <%= render "profile_picture", user: @user %>
+        <turbo-frame id="profile-picture">
+            <% if @user.profile_picture.attached? %>
+                <%= link_to @user.profile_picture, edit_user_path(user) %>
+            <% else %>
+                <%= link_to image_tag("profile_icon", alt: "Profile"), edit_user_path(@user) %>
+            <% end %>
+        </turbo-frame>
     </div>
+
     <div class="inner-information">
         <div class="information">
             <div>Email:</div>

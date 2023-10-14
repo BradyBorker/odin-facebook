@@ -1,0 +1,9 @@
+<turbo-frame id="profile-picture">
+    
+
+    <%= form_with model: @user do |form| %>
+        <%= form.file_field :profile_picture %>
+
+        <%= form.submit %>
+    <% end %>
+</turbo-frame>
