@@ -1,0 +1,5 @@
+<% if user.profile_picture.attached? %>
+    <%= user.profile_picture %>
+<% else %>
+    <%= image_tag("profile_icon", alt: "Profile") %>
+<% end %>

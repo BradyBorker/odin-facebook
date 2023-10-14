@@ -9,4 +9,10 @@ class UsersController < ApplicationController
         @user = User.includes(:user_information).find(params[:id])
         @posts = Post.where(user_id: current_user.id).includes(:likes, user: :user_information, comments: { user: :user_information }).limit(10)
     end
+
+    def edit
+    end
+
+    def update
+    end
 end

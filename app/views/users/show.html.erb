@@ -1,6 +1,8 @@
 <div class="user-information-container">
-    <div class="header">My Information</div>
-    <!-- TODO: Add profile image here-->
+    <!--<div class="header">My Information</div>-->
+    <div class="profile-picture">
+        <%= render "profile_picture", user: @user %>
+    </div>
     <div class="inner-information">
         <div class="information">
             <div>Email:</div>
