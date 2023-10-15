@@ -16,9 +16,9 @@
       <div class="nav-bar">
         <div class="profile-icon">
           <% if current_user.profile_picture.attached? %>
-              <%= link_to image_tag(current_user.profile_picture, alt: "Profile"), user_path(current_user.id), id: "profile-picture" %>
+              <%= link_to image_tag(current_user.profile_picture, alt: "Profile"), user_path(current_user.id) %>
           <% else %>
-              <%= link_to image_tag("profile_icon", alt: "Profile"), user_path(current_user.id), id: "profile-picture" %>
+              <%= link_to image_tag("profile_icon", alt: "Profile"), user_path(current_user.id) %>
           <% end %>
         </div>
 

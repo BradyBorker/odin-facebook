@@ -1,9 +1,9 @@
 <div class="user-information-container">
     <turbo-frame id="profile-picture-frame">
         <% if @user.profile_picture.attached? %>
-            <%= link_to image_tag(@user.profile_picture, alt: "Profile"), edit_user_path(@user), id: "profile-picture" %>
+            <%= link_to image_tag(@user.profile_picture, alt: "Profile"), edit_user_path(@user) %>
         <% else %>
-            <%= link_to image_tag("profile_icon", alt: "Profile"), edit_user_path(@user), id: "profile-picture" %>
+            <%= link_to image_tag("profile_icon", alt: "Profile"), edit_user_path(@user) %>
         <% end %>
     </turbo-frame>
 
