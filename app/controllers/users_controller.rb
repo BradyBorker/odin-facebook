@@ -16,10 +16,14 @@ class UsersController < ApplicationController
 
     def update
         @user = User.find(current_user.id)
-        @user.profile_picture.attach(params[:user][:profile_picture])
+        @user.profile_picture.attach(params[:user][:profile_picture]) unless params[:user].nil?
 
         if @user.save
-            redirect_back fallback_location: root_path
+            redirect_to user_path(@user)
+            #render turbo_stream:
+            #    turbo_stream.replace('profile-picture',
+            #        partial: 'users/profile_picture',
+            #        locals: { user: @user })
         else
             render :edit
         end

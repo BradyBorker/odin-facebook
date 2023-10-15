@@ -1,4 +1,4 @@
-<turbo-frame id="profile-picture">
+<turbo-frame id="profile-picture-frame">
     <div class="profile-picture-container">
         <% if current_user.profile_picture.attached? %>
             <%= current_user.profile_picture %>
@@ -10,6 +10,6 @@
     <%= form_with model: @user, multipart: true do |form| %>
         <%= form.file_field :profile_picture %>
 
-        <%= form.submit "Update Profile Picture" %>
+        <%= form.submit "Update Profile Picture", data: { turbo_frame: "_top" } %>
     <% end %>
 </turbo-frame>

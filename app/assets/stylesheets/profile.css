@@ -17,8 +17,9 @@
     align-items: center;
 }
 
-.profile-picture-container {
-    transform: scale(2);
+.user-information-container  img {
+    width: 200px;
+    height: 200px;
 }
 
 .user-information-container form {
