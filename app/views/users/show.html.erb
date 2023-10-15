@@ -1,14 +1,13 @@
 <div class="user-information-container">
-    <!--<div class="header">My Information</div>-->
-    <div class="profile-picture">
-        <turbo-frame id="profile-picture">
+    <turbo-frame id="profile-picture">
+        <div class="profile-picture-container">
             <% if @user.profile_picture.attached? %>
-                <%= link_to @user.profile_picture, edit_user_path(user) %>
+                <%= link_to image_tag(@user.profile_picture, alt: "Profile"), edit_user_path(@user) %>
             <% else %>
                 <%= link_to image_tag("profile_icon", alt: "Profile"), edit_user_path(@user) %>
             <% end %>
-        </turbo-frame>
-    </div>
+        </div>
+    </turbo-frame>
 
     <div class="inner-information">
         <div class="information">

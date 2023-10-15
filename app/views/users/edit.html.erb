@@ -1,9 +1,15 @@
 <turbo-frame id="profile-picture">
-    
+    <div class="profile-picture-container">
+        <% if current_user.profile_picture.attached? %>
+            <%= current_user.profile_picture %>
+        <% else %>
+            <%= image_tag("profile_icon", alt: "Profile") %>
+        <% end %>
+    </div>
 
-    <%= form_with model: @user do |form| %>
+    <%= form_with model: @user, multipart: true do |form| %>
         <%= form.file_field :profile_picture %>
 
-        <%= form.submit %>
+        <%= form.submit "Update Profile Picture" %>
     <% end %>
 </turbo-frame>

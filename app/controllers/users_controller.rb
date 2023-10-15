@@ -15,5 +15,13 @@ class UsersController < ApplicationController
     end
 
     def update
+        @user = User.find(current_user.id)
+        @user.profile_picture.attach(params[:user][:profile_picture])
+
+        if @user.save
+            redirect_back fallback_location: root_path
+        else
+            render :edit
+        end
     end
 end
