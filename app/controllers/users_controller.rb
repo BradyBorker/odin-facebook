@@ -20,10 +20,6 @@ class UsersController < ApplicationController
 
         if @user.save
             redirect_to user_path(@user)
-            #render turbo_stream:
-            #    turbo_stream.replace('profile-picture',
-            #        partial: 'users/profile_picture',
-            #        locals: { user: @user })
         else
             render :edit
         end
