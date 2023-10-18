@@ -1,11 +1,11 @@
 <div class="new-post">
-    <%= form_with model: @post do |form| %>
+    <%= form_with model: @post, data: { controller: "upload-notification", upload_notification_notify_class: "notify" } do |form| %>
         <%= form.text_area :body, placeholder: "Write some thoughts" %>
         
-        <%= form.label :image, multipart: true do %>
+        <%= form.label :image, multipart: true, data: { upload_notification_target: "label" } do %>
             <%= image_tag("upload_file", alt: "Upload File") %>
         <% end %>
-        <%= form.file_field :image %>
+        <%= form.file_field :image, data: { action: "upload-notification#check", upload_notification_target: "input" } %>
     
         <%= form.button "Post" %>
     <% end %>

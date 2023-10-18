@@ -37,6 +37,10 @@
     filter: invert(98%) sepia(7%) saturate(224%) hue-rotate(316deg) brightness(89%) contrast(87%);
 }
 
+.new-post label.notify {
+    filter: invert(21%) sepia(94%) saturate(1958%) hue-rotate(343deg) brightness(84%) contrast(105%);
+}
+
 .new-post button {
     grid-column: 4 / 6;
     margin-top: 5px;
