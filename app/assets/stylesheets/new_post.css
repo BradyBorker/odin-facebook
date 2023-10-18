@@ -26,6 +26,17 @@
     color: var(--text-color);
 }
 
+.new-post input[type="file"] {
+    display: none;
+}
+
+.new-post label {
+    height: fit-content;
+    width: fit-content;
+    cursor: pointer;
+    filter: invert(98%) sepia(7%) saturate(224%) hue-rotate(316deg) brightness(89%) contrast(87%);
+}
+
 .new-post button {
     grid-column: 4 / 6;
     margin-top: 5px;

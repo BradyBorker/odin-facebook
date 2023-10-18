@@ -1,6 +1,11 @@
 <div class="new-post">
     <%= form_with model: @post do |form| %>
         <%= form.text_area :body, placeholder: "Write some thoughts" %>
+        
+        <%= form.label :image, multipart: true do %>
+            <%= image_tag("upload_file", alt: "Upload File") %>
+        <% end %>
+        <%= form.file_field :image %>
     
         <%= form.button "Post" %>
     <% end %>

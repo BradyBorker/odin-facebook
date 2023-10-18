@@ -8,6 +8,11 @@
 </div>
 
 <div class="body-container">
+    <% if post.image.attached? %>
+        <div class="post-image">
+            <%= image_tag(post.image, alt: "Post Image") %>
+        </div>
+    <% end %>
     <%= post.body %>
 </div>
 

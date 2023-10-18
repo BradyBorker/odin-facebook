@@ -12,16 +12,16 @@ class PostsController < ApplicationController
 
         if @post.save
             flash[:notice] = 'Post Created Successfully'
-            redirect_to root_path
         else
             flash[:alert] = 'Post Not Created'
-            render :new
         end
+
+        redirect_to root_path
     end
 
     private
 
     def post_params
-        params.require(:post).permit(:body)
+        params.require(:post).permit(:body, :image)
     end
 end
