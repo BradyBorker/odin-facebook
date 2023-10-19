@@ -4,14 +4,14 @@
     right: 0;
     margin-right: 75px;
     margin-top: 10px;
-    animation: 1s errors-animation 1;
+    animation: 1s errors-container ease-out 1;
 
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-@keyframes errors-animation {
+@keyframes errors-container {
     0% {
         transform: translateY(50px)
     }
