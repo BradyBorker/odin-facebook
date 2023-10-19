@@ -9,9 +9,7 @@
 
 <div class="body-container">
     <% if post.image.attached? %>
-        <div class="post-image">
-            <%= image_tag(post.image, alt: "Post Image") %>
-        </div>
+        <%= image_tag(post.image, alt: "Post Image") %>
     <% end %>
     <% unless post.body == "" %>
         <div class="post-body"><%= post.body %></div>
