@@ -6,8 +6,9 @@
 
 .comment-label {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     color: var(--text-color);
+    margin-bottom: 10px;
 }
 
 .comment-header {

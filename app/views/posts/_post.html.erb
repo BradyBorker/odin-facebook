@@ -17,7 +17,7 @@
 </div>
 
 <div class="comments-container" id=<%= "comment-container_#{post.id}" %>>
-    <div class="comment-label">Comments:</div>
+    <!--<div class="comment-label">Comments:</div>-->
     <% post.comments.each do |comment| %>
         <%= render "comments/comment", comment: comment %>
     <% end %>

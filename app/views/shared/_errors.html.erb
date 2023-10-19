@@ -1,0 +1,7 @@
+<div class="errors-container">
+    <%= post.errors.full_messages.each do |message| %>
+        <div class="error">
+            <%= message %>
+        </div>
+    <% end %>
+</div>
