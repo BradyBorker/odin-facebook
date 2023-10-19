@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     def index
         @post = Post.new
         @comment = Comment.new
-        @posts = Post.timeline_posts(current_user.id).includes(:likes, user: :user_information, comments: { user: :user_information }).limit(10)
+        @posts = Post.timeline_posts(current_user.id).includes(:likes, user: :user_information, comments: { user: :user_information }, image_attachment: :blob).limit(10)
     end
 
     def create

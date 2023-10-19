@@ -13,11 +13,12 @@
             <%= image_tag(post.image, alt: "Post Image") %>
         </div>
     <% end %>
-    <%= post.body %>
+    <% unless post.body == "" %>
+        <div class="post-body"><%= post.body %></div>
+    <% end %>
 </div>
 
 <div class="comments-container" id=<%= "comment-container_#{post.id}" %>>
-    <!--<div class="comment-label">Comments:</div>-->
     <% post.comments.each do |comment| %>
         <%= render "comments/comment", comment: comment %>
     <% end %>
