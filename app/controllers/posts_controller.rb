@@ -12,11 +12,15 @@ class PostsController < ApplicationController
 
         if @post.save
             flash[:notice] = 'Post Created Successfully'
+            redirect_to root_path
         else
             flash[:alert] = 'Post Not Created'
+            puts "ERRORS: #{@post.errors.present?}"
+            render turbo_stream:
+                turbo_stream.replace('new-post',
+                partial: 'posts/new_post',
+                locals: { post: @post })
         end
-
-        redirect_to root_path
     end
 
     private

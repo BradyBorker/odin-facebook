@@ -1,5 +1,7 @@
-<div class="new-post">
-    <%= form_with model: @post, data: { controller: "upload-notification", upload_notification_notify_class: "notify" } do |form| %>
+<div class="new-post" id="new-post">
+    <%= render 'shared/errors', post: post %>
+    
+    <%= form_with model: post, data: { controller: "upload-notification", upload_notification_notify_class: "notify" }, local: false do |form| %>
         <%= form.text_area :body, placeholder: "Write some thoughts" %>
         
         <%= form.label :image, multipart: true, data: { upload_notification_target: "label" } do %>
