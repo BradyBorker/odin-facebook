@@ -1,0 +1,34 @@
+.errors-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 75px;
+    margin-top: 10px;
+    animation: 1s errors-animation 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@keyframes errors-animation {
+    0% {
+        transform: translateY(50px)
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.error {
+    background-color: rgba(185, 28, 28, .4);
+    padding: 3px;
+    border-radius: 3px;
+    height: 30px;
+    color: var(--text-area-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
