@@ -7,20 +7,25 @@
         <% end %>
     </turbo-frame>
 
-    <div class="inner-information">
-        <div class="information">
-            <div>Email:</div>
-            <div><%= @user.email %></div>
+    <turbo-frame id="user-information-frame">
+        <% if @user.id == current_user.id %>
+            <%= link_to "Edit", edit_user_user_information(@user) %>
+        <% end %>
+        <div class="inner-information">
+            <div class="information">
+                <div>Email:</div>
+                <div><%= @user.email %></div>
+            </div>
+            <div class="information">
+                <div>First Name:</div>
+                <div><%= @user.user_information.first_name %></div>
+            </div>
+            <div class="information">
+                <div>Last Name:</div>
+                <div><%= @user.user_information.last_name %></div>
+            </div>
         </div>
-        <div class="information">
-            <div>First Name:</div>
-            <div><%= @user.user_information.first_name %></div>
-        </div>
-        <div class="information">
-            <div>Last Name:</div>
-            <div><%= @user.user_information.last_name %></div>
-        </div>
-    </div>
+    </turbo-frame>
 </div>
     
 <div class="posts-container user-posts-container">

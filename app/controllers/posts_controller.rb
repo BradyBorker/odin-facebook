@@ -15,7 +15,6 @@ class PostsController < ApplicationController
             redirect_to root_path
         else
             flash[:alert] = 'Post Not Created'
-            puts "ERRORS: #{@post.errors.present?}"
             render turbo_stream:
                 turbo_stream.replace('new-post',
                 partial: 'posts/new_post',
