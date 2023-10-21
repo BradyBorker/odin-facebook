@@ -1,5 +1,5 @@
 <div class="post-heading">
-    <div class="author-name"><%= post.user.display_name %></div>
+    <div class="author-name"><%= link_to post.user.display_name, user_path(post.user) %></div>
     <div class="create-date"><%= Date.parse(post.created_at.to_s, '%m-%d-%Y') %></div>
     
     <div class="post-likes">

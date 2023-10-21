@@ -12,8 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :user_informations, only: [:update]
-
-  resource :friend_invitations, only: [:create]
+  resources :friend_invitations, only: [:create]
 
   resources :posts, only: [:index, :create] do
     resources :likes, only: [:create, :destroy]
