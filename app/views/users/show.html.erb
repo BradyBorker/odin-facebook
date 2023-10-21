@@ -1,7 +1,7 @@
 <div class="user-information-container">
     <turbo-frame id="profile-picture-frame">
-        <div class="img-text">Click Me</div>
         <% if @user.id == current_user.id %>
+            <div class="img-text">Click Me</div>
             <% if @user.profile_picture.attached? %>
                 <%= link_to image_tag(@user.profile_picture, alt: "Profile"), edit_user_path(@user) %>
             <% else %>
