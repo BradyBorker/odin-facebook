@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
     def show
         @user = User.includes(:user_information).find(params[:id])
-        @posts = Post.where(user_id: current_user.id).includes(:likes, user: :user_information, comments: { user: :user_information }).limit(10)
+        @posts = Post.where(user_id: @user.id).includes(:likes, user: :user_information, comments: { user: :user_information }, image_attachment: :blob).limit(10)
     end
 
     def edit
