@@ -3,7 +3,7 @@
     <div class="create-date"><%= Date.parse(post.created_at.to_s, '%m-%d-%Y') %></div>
     
     <div class="post-likes">
-        <%= render "likes/like", post: post %>
+        <%= render "likes/post_likes", post: post %>
     </div>
 </div>
 

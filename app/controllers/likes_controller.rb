@@ -1,11 +1,11 @@
 class LikesController < ApplicationController
     def create
-        @post = Post.find(params[:post_id])
-        update_like if @post.likes.create(user_id: current_user.id)
+        @parent = parent
+        update_like if @parent.likes.create(user_id: current_user.id)
     end
 
     def destroy
-        @like = Like.find_by(post_id: params[:post_id], user_id: params[:id])
+        @like = Like.find(params[:id])
         @like.destroy
         update_like
     end
@@ -13,11 +13,18 @@ class LikesController < ApplicationController
     private
 
     def update_like
-        @post ||= Post.find(params[:post_id])
+        @parent ||= parent
+        @parent_model = @parent.model_name.to_s.downcase
 
         render turbo_stream:
-            turbo_stream.replace("like_#{@post.id}",
-                partial: 'likes/like',
-                locals: { post: @post })
+            turbo_stream.replace("#{@parent_model}_#{@parent.id}",
+                partial: "likes/#{@parent_model}_likes",
+                locals: { parent: @parent })
+    end
+
+    def parent
+        return Post.find(params[:post_id]) if params[:post_id]
+
+        Comment.find(params[:comment_id]) if params[:comment_id]
     end
 end
