@@ -1,6 +1,5 @@
 class Post < ApplicationRecord
   validates :body, presence: true, unless: -> { image.attached? }
-  validates_format_of :image, with: /\.(png|jpg|jpeg)\z/, message: 'Non Acceptable File Type'
 
   belongs_to :user
 

@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   root 'posts#index'
 
   resources :users, only: [:index, :show, :edit, :update] do
-    resource :user_information, only: [:edit, :update]
+    resource :user_information, only: [:edit]
   end
+
+  resources :user_informations, only: [:update]
 
   resource :friend_invitations, only: [:create]
 

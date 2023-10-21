@@ -1,5 +1,5 @@
 <turbo-frame id="user-information-frame">
-    <%= form_with model: [:user, @user_information], html: { class: "inner-information" } do |form| %>
+    <%= form_with model: @user_information, html: { class: "inner-information" } do |form| %>
         <div class="information field">
             <%= form.label :first_name, "First Name:" %>
             <%= form.text_field :first_name %>
