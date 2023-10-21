@@ -8,10 +8,10 @@
     </turbo-frame>
 
     <turbo-frame id="user-information-frame">
-        <% if @user.id == current_user.id %>
-            <%= link_to "Edit", edit_user_user_information(@user) %>
-        <% end %>
         <div class="inner-information">
+            <% if @user.id == current_user.id %>
+                <%= link_to "Edit", edit_user_user_information_path(@user) %>
+            <% end %>
             <div class="information">
                 <div>Email:</div>
                 <div><%= @user.email %></div>

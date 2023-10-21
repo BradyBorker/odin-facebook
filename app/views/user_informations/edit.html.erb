@@ -1,0 +1,22 @@
+<turbo-frame id="user-information-frame">
+    <%= form_with model: @user, html: { class: "inner-information" } do |form| %>
+        <div class="information field">
+            <%= form.label :email, "Email:" %>
+            <%= form.text_field :email, disabled: true %>
+        </div>
+
+        <%= fields_for :user_information, @user.user_information do |user_fields| %>
+            <div class="information field">
+                <%= user_fields.label :first_name, "First Name:" %>
+                <%= user_fields.text_field :first_name %>
+            </div>
+
+            <div class="information field">
+                <%= user_fields.label :last_name, "Last Name:" %>
+                <%= user_fields.text_field :last_name %>
+            </div>
+        <% end %>
+
+        <%= form.submit "Update" %>
+    <% end %>
+</turbo-frame>

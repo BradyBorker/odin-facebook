@@ -4,6 +4,7 @@
     margin-top: 10px;
     margin-left: 20px;
     height: max-content;
+    width: 300px;
     padding: 10px;
 
     display: flex;
@@ -24,24 +25,22 @@
     height: 200px;
 }
 
-.user-information-container form {
-    display: flex;
+#user-information-frame {
+    width: 100%;
 }
 
-.user-information-container input {
-    height: 25px;
-    border-radius: 3px;
-    border-color: var(--ruby-red);
-    font-size: 12px;
+#user-information-frame input[type="submit"] {
+    margin-top: 15px;
     padding: 3px;
-    width: fit-content;
+    border-color: var(--ruby-red);
 }
 
 .inner-information {
     border: 3px solid var(--ruby-red);
     padding: 10px;
     margin-top: 10px;
-    width: 100%;
+    position: relative;
+    box-sizing: border-box;
 }
 
 .information {
@@ -52,6 +51,13 @@
 
 .information:not(:first-child) {
     margin-top: 15px;
+}
+
+.inner-information > a {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 5px 5px 0px 0px;
 }
 
 .user-posts-container {
