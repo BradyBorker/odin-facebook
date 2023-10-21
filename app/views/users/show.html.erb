@@ -1,5 +1,6 @@
 <div class="user-information-container">
     <turbo-frame id="profile-picture-frame">
+        <div class="img-text">Click Me</div>
         <% if @user.profile_picture.attached? %>
             <%= link_to image_tag(@user.profile_picture, alt: "Profile"), edit_user_path(@user) %>
         <% else %>
@@ -29,7 +30,9 @@
 </div>
     
 <div class="posts-container user-posts-container">
-    <div class="header">My Posts</div>
+    <% if @posts.empty? %>
+        <div class="header">No Posts :(</div>
+    <% end %>
     <% @posts.each do |post| %>
         <div class="post">
             <%= render "posts/post", post: post %>
