@@ -5,10 +5,13 @@ class CommentsController < ApplicationController
         @comment.user_id = current_user.id
 
         if @comment.save
-            flash[:notice] = "Comment Created"
-            render turbo_stream: turbo_stream.append("comment-container_#{@post.id}".to_sym, partial: 'comments/comment', locals: { comment: @comment })
+            flash[:notice] = 'Comment Created'
+            render turbo_stream:
+                turbo_stream.append("comment-container_#{@post.id}".to_sym,
+                partial: 'comments/comment',
+                locals: { comment: @comment })
         else
-            flash[:alert] = "Comment not created"
+            flash[:alert] = 'Comment not created'
         end
     end
 
