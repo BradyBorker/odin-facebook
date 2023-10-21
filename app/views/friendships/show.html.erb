@@ -9,11 +9,11 @@
 
 <div class="pending-invitations">
     <div>Pending Friend Invitations</div>
-    <div class="pending-container">
-        <% @pending_invitations.each do |invitation| %>
+    <% @pending_invitations.each do |invitation| %>
+        <div class="pending-container">
             <%= invitation.sender.display_name %>
             <%= link_to "Accept Invititation", friendships_path(friend_id: invitation.sender.id, invitation_id: invitation.id), data: {'turbo-method': :post} %>
-         <% end %>
-    </div>
+        </div>
+    <% end %>
 </div>
     
