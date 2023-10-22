@@ -21,8 +21,12 @@
 
 .comment-likes {
     position: relative;
-    width: 35px;
+    width: 30px;
     padding-top: 5px;
+}
+
+.comment-likes img {
+    scale: .75;
 }
 
 .likes-count {
