@@ -1,5 +1,5 @@
 <div id=<%= "post_like_#{parent.id}" %>>
-    <% like = Like.find_by(user_id: current_user.id) %>
+    <% like = parent.likes.find_by(user_id: current_user.id) %>
     <% if like %>
         <%= link_to image_tag("thumb_up", alt: "Like Post"), post_like_path(parent, like), data: { "turbo-method": :delete } %>
     <% else %>

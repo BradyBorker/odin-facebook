@@ -2,13 +2,16 @@ class LikesController < ApplicationController
     def create
         @parent = parent
         @like = @parent.likes.build(user_id: current_user.id)
+        @like.save
 
-        update_like if @like.save
+        update_like
     end
 
     def destroy
-        @like = Like.find(params[:id])
+        @parent = parent
+        @like = @parent.likes.find(params[:id])
         @like.destroy
+
         update_like
     end
 

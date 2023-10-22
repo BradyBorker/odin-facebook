@@ -13,6 +13,22 @@
 
 .comment-header {
     font-size: 12px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment-likes {
+    position: relative;
+    width: 35px;
+    padding-top: 5px;
+}
+
+.likes-count {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .comment {
