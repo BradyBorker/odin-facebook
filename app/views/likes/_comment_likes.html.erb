@@ -1,9 +1,9 @@
-<div id=<%= "comment_like_#{post.id}" %>>
-    <% like = post.likes.find_by(user_id: current_user.id) %>
+<div id=<%= "comment_like_#{parent.id}" %>>
+    <% like = parent.likes.find_by(user_id: current_user.id) %>
     <% if like %>
-        <%= link_to image_tag("thumb_up", alt: "Like Post"), comment_like_path(post, like), data: { "turbo-method": :delete } %>
+        <%= link_to image_tag("thumb_up", alt: "Like Post"), comment_like_path(parent, like), data: { "turbo-method": :delete } %>
     <% else %>
-        <%= link_to image_tag("thumb_up", alt: "Like Post"), comment_likes_path(post), data: { "turbo-method": :post } %>
+        <%= link_to image_tag("thumb_up", alt: "Like Post"), comment_likes_path(parent), data: { "turbo-method": :post } %>
     <% end %>
-    <div class="likes-count"><%= post.likes.count.to_s %></div>
+    <div class="likes-count"><%= parent.likes.count.to_s %></div>
 </div>

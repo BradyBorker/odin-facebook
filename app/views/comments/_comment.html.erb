@@ -1,5 +1,6 @@
 <div class="comment" id=<%= "comment_#{comment.id}" %>>
     <div class="comment-header">
+        <%= render "likes/comment_likes", parent: comment %>
         <%= comment.user.display_name %>
     </div>
     <div class="comment-body">
